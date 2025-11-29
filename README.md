@@ -8,10 +8,10 @@ A tool for finding alpha-admissible Key-Difference
 
 Contents
 --------
-• alpha_admissible_{cipher_name}.c  — C source to search α-admissible subspaces
-• alpha_admissible_{cipher_name}    — compiled binary (produced from the C file)
-• elimination_GIFT.py               — post-process GIFT output (intersection with actual key-add positions)
-• echelon_form.sage                 — convert a basis to row-echelon form
+- alpha_admissible_{cipher_name}.c  — C source to search α-admissible subspaces
+- alpha_admissible_{cipher_name}    — compiled binary (produced from the C file)
+- limination_GIFT.py               — post-process GIFT output (intersection with actual key-add positions)
+- echhelon_form.sage                 — convert a basis to row-echelon form
 
 Purpose
 -------
@@ -34,9 +34,9 @@ Usage
 
 Defaults
 --------
-• PRESENT:   r=3, Z=50, α=0x1
-• GIFT:      r=3, Z=50, α=0x1
-• RECTANGLE: r=3, Z=50, α=0x100
+PRESENT:   r=3, Z=50, α=0x1
+GIFT:      r=3, Z=50, α=0x1
+RECTANGLE: r=3, Z=50, α=0x100
 
 Example
 -------
@@ -54,14 +54,14 @@ Non-unit vectors indicate non-trivial cross-round compensations.
 
 Notes
 -----
-• Z is the sample size for affine propagation; 50 is usually enough. Use a fixed -s (seed) for reproducibility.
-• GIFT: the round key is added only to half the state. After running the finder, intersect the resulting
+-Z is the sample size for affine propagation; 50 is usually enough. Use a fixed -s (seed) for reproducibility. 
+-GIFT: the round key is added only to half the state. After running the finder, intersect the resulting
   subspace with the span of unit vectors at the bit positions where the round key is actually added.
   Use elimination_GIFT.py (paste the C output into `input_str`) to perform this intersection.
-• Row-echelon form: use echelon_form.sage by putting the basis (from the C tool or elimination_GIFT.py)
+-Row-echelon form: use echelon_form.sage by putting the basis (from the C tool or elimination_GIFT.py)
   into the DATA string variable; it prints an echelonized basis.
-• Number of key bits to guess =
+-Number of key bits to guess =
     (#rounds × size_of_round_key) − (dimension of the resulting α-admissible subspace),
   where the dimension is the count of basis vectors after any post-processing/intersection.
-• The tool naturally detects non-trivial key relations: a wrong bit can be compensated by another
+-The tool naturally detects non-trivial key relations: a wrong bit can be compensated by another
   (even in a later round); such dependencies appear as non-unit vectors in the echelonized basis.
