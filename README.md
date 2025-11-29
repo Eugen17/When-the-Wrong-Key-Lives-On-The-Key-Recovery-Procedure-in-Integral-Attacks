@@ -60,7 +60,7 @@ Notes
   Use elimination_GIFT.py (paste the C output into `input_str`) to perform this intersection.
 - Row-echelon form: use echelon_form.sage by putting the basis (from the C tool or elimination_GIFT.py)
   into the DATA string variable; it prints an echelonized basis.
--Number of key bits to guess =(#rounds × size_of_round_key) − (dimension of the resulting α-admissible subspace),
+- Number of key bits to guess =(#rounds × size_of_round_key) − (dimension of the resulting α-admissible subspace),
   where the dimension is the count of basis vectors after any post-processing/intersection.
 - The tool naturally detects non-trivial key relations: a wrong bit can be compensated by another
   (even in a later round); such dependencies appear as non-unit vectors in the echelonized basis.
