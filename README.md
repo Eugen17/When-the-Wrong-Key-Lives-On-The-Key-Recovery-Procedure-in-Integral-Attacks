@@ -2,7 +2,8 @@
 Supplementary code to the paper "When the Wrong Key Lives On: The Key-Recovery Procedure in Integral Attacks" Link:https://eprint.iacr.org/2025/2011
 
 
-ARKST — alpha-Admissible Key-Difference Finder (README, short)
+ARKST - Affine Related-Key Subspace Trails 
+A tool for finding alpha-admissible Key-Difference 
 ==============================================================
 
 Contents
